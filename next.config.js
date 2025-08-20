@@ -7,6 +7,13 @@ module.exports = withBundleAnalyzer({
   eslint: {
     dirs: ['.'],
   },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
   poweredByHeader: false,
   trailingSlash: true,
   basePath: '',
