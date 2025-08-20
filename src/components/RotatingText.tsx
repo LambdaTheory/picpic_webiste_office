@@ -5,9 +5,9 @@
 import type {
   animationControls as AnimationContorls,
   Target,
-  type TargetAndTransition,
+  TargetAndTransition,
   Transition,
-  type VariantLabels,
+  VariantLabels,
 } from 'motion/react';
 import { AnimatePresence, motion } from 'motion/react';
 import React, {
