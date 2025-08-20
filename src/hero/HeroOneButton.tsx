@@ -2,16 +2,16 @@ import type { ReactNode } from 'react';
 
 type IHeroOneButtonProps = {
   title: ReactNode;
-  description: string;
+  description: ReactNode;
   button: ReactNode;
 };
 
 const HeroOneButton = (props: IHeroOneButtonProps) => (
-  <header className="text-center">
-    <h1 className="whitespace-pre-line text-5xl font-bold leading-hero text-gray-900">
+  <header className="flex h-full flex-col items-center justify-center text-center">
+    <h1 className="mb-4 whitespace-pre-line font-sans text-6xl font-bold leading-hero text-gray-100">
       {props.title}
     </h1>
-    <div className="mb-16 mt-4 text-2xl">{props.description}</div>
+    <div className="mb-16 mt-8">{props.description}</div>
 
     {props.button}
   </header>

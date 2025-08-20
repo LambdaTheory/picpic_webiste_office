@@ -1,5 +1,5 @@
 {
-  "name": "next-js-boilerplate",
+  "name": "picpic-landing-page",
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
@@ -14,12 +14,27 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@babel/runtime": "^7.28.3",
+    "@radix-ui/react-hover-card": "^1.1.15",
+    "@tabler/icons-react": "^3.34.1",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
+    "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.539.0",
+    "motion": "^12.23.12",
     "next": "^14.1.0",
     "next-seo": "^6.4.0",
+    "qss": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-jsx-plugin-postcss": "^4.0.1"
+    "simplex-noise": "^4.0.3",
+    "styled-jsx-plugin-postcss": "^4.0.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^14.1.0",

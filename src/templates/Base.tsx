@@ -1,19 +1,22 @@
+import { SmoothCursor } from '@/components/ui/smooth-cursor';
+
 import { Meta } from '../layout/Meta';
 import { AppConfig } from '../utils/AppConfig';
 import { Banner } from './Banner';
 import { Footer } from './Footer';
 import { Hero } from './Hero';
-import { Sponsors } from './Sponsors';
 import { VerticalFeatures } from './VerticalFeatures';
 
 const Base = () => (
-  <div className="text-gray-600 antialiased">
+  <div className="dark min-h-screen w-full overflow-x-hidden bg-dark-900 text-gray-300 antialiased">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Hero />
-    <Sponsors />
+    {/* Divider between Hero and VerticalFeatures */}
+    <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-600 to-transparent opacity-50"></div>
     <VerticalFeatures />
     <Banner />
     <Footer />
+    <SmoothCursor />
   </div>
 );
 

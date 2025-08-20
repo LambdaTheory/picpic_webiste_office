@@ -1,6 +1,19 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: ['class', 'class'],
   theme: {
+    fontFamily: {
+      sans: ['Oswald', 'system-ui', 'sans-serif'],
+      serif: ['Oswald', 'Georgia', 'serif'],
+      mono: ['Oswald', 'Menlo', 'monospace'],
+      display: ['Oswald', 'Impact', 'sans-serif'],
+      script: ['Oswald', 'cursive'],
+      elegant: ['Oswald', 'serif'],
+      modern: ['Oswald', 'sans-serif'],
+      artistic: ['Oswald', 'serif'],
+      handwritten: ['Oswald', 'cursive'],
+    },
     fontSize: {
       xs: '0.75rem',
       sm: '0.875rem',
@@ -16,15 +29,17 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          100: '#E6F6FE',
-          200: '#C0EAFC',
-          300: '#9ADDFB',
-          400: '#4FC3F7',
-          500: '#03A9F4',
-          600: '#0398DC',
-          700: '#026592',
-          800: '#014C6E',
-          900: '#013349',
+          100: '#FEF7E6',
+          200: '#FCEBC0',
+          300: '#FBDD9A',
+          400: '#F7C34F',
+          500: '#F4A903',
+          600: '#DC9803',
+          700: '#926502',
+          800: '#6E4C01',
+          900: '#493301',
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
         gray: {
           100: '#f7fafc',
@@ -37,11 +52,84 @@ module.exports = {
           800: '#2d3748',
           900: '#1a202c',
         },
+        dark: {
+          50: '#f8fafc',
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e0',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+        },
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        chart: {
+          1: 'hsl(var(--chart-1))',
+          2: 'hsl(var(--chart-2))',
+          3: 'hsl(var(--chart-3))',
+          4: 'hsl(var(--chart-4))',
+          5: 'hsl(var(--chart-5))',
+        },
       },
       lineHeight: {
         hero: '4.5rem',
       },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      animation: {
+        'meteor-effect': 'meteor 5s linear infinite',
+        shine: 'shine var(--duration) infinite linear',
+      },
+      keyframes: {
+        meteor: {
+          '0%': { transform: 'rotate(45deg) translateX(0)', opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': {
+            transform: 'rotate(45deg) translateX(-500px)',
+            opacity: '0',
+          },
+        },
+        shine: {
+          '0%': { 'background-position': '0% 0%' },
+          '50%': { 'background-position': '100% 100%' },
+          '100%': { 'background-position': '0% 0%' },
+        },
+      },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line global-require
+  plugins: [require('tailwindcss-animate')],
 };

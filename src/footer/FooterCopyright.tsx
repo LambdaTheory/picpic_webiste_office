@@ -1,8 +1,8 @@
 import { AppConfig } from '../utils/AppConfig';
 
 const FooterCopyright = () => (
-  <div className="footer-copyright">
-    © Copyright {new Date().getFullYear()} {AppConfig.title}. Made with{' '}
+  <div className="footer-copyright text-gray-400">
+    © Copyright 2025 {AppConfig.title}. All rights reserved. Made with{' '}
     <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>.
     {/*
      * PLEASE READ THIS SECTION
@@ -13,7 +13,7 @@ const FooterCopyright = () => (
     <style jsx>
       {`
         .footer-copyright :global(a) {
-          @apply text-primary-500;
+          @apply text-primary-400;
         }
 
         .footer-copyright :global(a:hover) {
