@@ -58,31 +58,68 @@ const Hero = () => (
         }
         button={
           <div className="mt-8 flex flex-col items-center space-y-8">
+            {/* Beta Features Preview */}
+            <div className="text-md flex flex-wrap items-center justify-center gap-6 text-gray-400">
+              <div className="flex items-center space-x-2">
+                <span className="text-blue-400">🧪</span>
+                <span>Beta Testing Phase</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-green-400">✓</span>
+                <span>100% Free Access</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-purple-400">⭐</span>
+                <span>Early Access Benefits</span>
+              </div>
+            </div>
+
             <div className="max-w-2xl text-center">
               <p className="mb-4 text-2xl font-medium text-gray-200 md:text-3xl">
                 🌟 Want to experience these powerful AI features?
               </p>
               <p className="text-lg text-gray-300 md:text-xl">
-                Join our wishlist to be the first to know when we launch
+                Join our beta waitlist to be among the first to try PicPic
               </p>
+
+              {/* Beta Invitation Element */}
+              <div className="mt-4 inline-flex items-center rounded-full border border-primary-400/20 bg-primary-400/10 px-4 py-2">
+                <span className="mr-2 text-primary-400">�</span>
+                <span className="text-sm font-medium text-primary-300">
+                  Limited beta spots - 1,200+ users already applied
+                </span>
+              </div>
             </div>
+
             <button
               onClick={() => {
-                const bannerElement =
-                  document.querySelector('[data-banner-form]');
+                const bannerElement = document.querySelector('#banner-section');
                 if (bannerElement) {
-                  bannerElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center',
-                  });
+                  bannerElement.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
               className="cursor-pointer"
             >
               <Cover className="text-3xl font-semibold md:text-4xl">
-                Join WishList
+                Join Beta Waitlist
               </Cover>
             </button>
+
+            {/* Beta Benefits */}
+            <div className="text-md flex flex-wrap items-center justify-center gap-4 text-gray-500">
+              <div className="flex items-center space-x-1">
+                <span>🎁</span>
+                <span>Exclusive beta perks</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <span>💬</span>
+                <span>Direct feedback channel</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <span>🏆</span>
+                <span>Early access to features</span>
+              </div>
+            </div>
           </div>
         }
       />

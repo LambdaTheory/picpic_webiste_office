@@ -2,6 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 
+import { faqData } from '../components/FAQ';
+import { reviewData } from '../components/Reviews';
 import { AppConfig } from '../utils/AppConfig';
 
 type IMetaProps = {
@@ -17,6 +19,12 @@ const Meta = (props: IMetaProps) => {
   const currentUrl =
     props.canonical || `${AppConfig.canonical_url}${router.asPath}`;
   const ogImageUrl = props.ogImage || AppConfig.og_image;
+
+  // 计算真实的平均评分
+  const averageRating =
+    reviewData.reduce((sum, review) => sum + review.rating, 0) /
+    reviewData.length;
+  const formattedAverageRating = averageRating.toFixed(1);
 
   // 结构化数据 - 软件应用
   const structuredData = {
@@ -122,6 +130,136 @@ const Meta = (props: IMetaProps) => {
             __html: JSON.stringify(structuredData),
           }}
           key="structured-data"
+        />
+
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'PicPic',
+              url: AppConfig.canonical_url,
+              logo: `${AppConfig.canonical_url}/assets/images/logo.png`,
+              description: AppConfig.description,
+              foundingDate: '2024',
+              sameAs: [
+                'https://github.com/picpic-ai',
+                'https://twitter.com/picpic_ai',
+              ],
+            }),
+          }}
+          key="organization-schema"
+        />
+
+        {/* WebSite Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: AppConfig.site_name,
+              url: AppConfig.canonical_url,
+              description: AppConfig.description,
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: `${AppConfig.canonical_url}?q={search_term_string}`,
+                },
+                'query-input': 'required name=search_term_string',
+              },
+            }),
+          }}
+          key="website-schema"
+        />
+
+        {/* Breadcrumb Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: AppConfig.canonical_url,
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'AI Image Analysis Tool',
+                  item: `${AppConfig.canonical_url}#features`,
+                },
+              ],
+            }),
+          }}
+          key="breadcrumb-schema"
+        />
+
+        {/* FAQ Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqData.map((faq) => ({
+                '@type': 'Question',
+                name: faq.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.answer,
+                },
+              })),
+            }),
+          }}
+          key="faq-schema"
+        />
+
+        {/* Review Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Product',
+              name: AppConfig.site_name,
+              description: props.description,
+              url: currentUrl,
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: formattedAverageRating,
+                reviewCount: reviewData.length.toString(),
+                bestRating: '5',
+                worstRating: '1',
+              },
+              review: reviewData.map((review) => ({
+                '@type': 'Review',
+                '@id': `${currentUrl}#review-${review.id}`,
+                author: {
+                  '@type': 'Person',
+                  name: review.author,
+                  image: review.avatar,
+                },
+                reviewRating: {
+                  '@type': 'Rating',
+                  ratingValue: review.rating.toString(),
+                  bestRating: '5',
+                  worstRating: '1',
+                },
+                reviewBody: review.reviewBody,
+                name: review.title,
+                datePublished: review.datePublished,
+              })),
+            }),
+          }}
+          key="review-schema"
         />
       </Head>
       <NextSeo

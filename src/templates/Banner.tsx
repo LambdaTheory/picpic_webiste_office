@@ -48,6 +48,7 @@ const Banner = () => {
   return (
     <Section>
       <div
+        id="banner-section"
         className="relative flex flex-col overflow-hidden rounded-md border border-dark-600 bg-dark-700 p-4 text-center sm:p-12"
         data-banner-form
       >
@@ -60,13 +61,41 @@ const Banner = () => {
 
         <div className="relative z-10 mb-8">
           <h2 className="mb-4 text-3xl font-bold text-gray-100">
-            {isSubmitted ? 'Thank you for subscribing!' : 'Join Our Wishlist'}
+            {isSubmitted
+              ? 'Thank you for joining our beta!'
+              : '🚀 Join PicPic Beta Program'}
           </h2>
           <p className="text-lg text-primary-400">
             {isSubmitted
-              ? 'We will notify you as soon as the product launches'
-              : 'Be among the first to experience our product and get exclusive updates'}
+              ? 'We will notify you when beta access becomes available'
+              : 'Be among the first to test the most advanced AI image analysis tool'}
           </p>
+
+          {!isSubmitted && (
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-300">
+              <div className="flex items-center space-x-2">
+                <span className="text-green-400">🧪</span>
+                <span>Beta testing access</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-blue-400">🎯</span>
+                <span>Shape the final product</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-purple-400">🔥</span>
+                <span>Free beta access</span>
+              </div>
+            </div>
+          )}
+
+          {!isSubmitted && (
+            <div className="mt-4 inline-flex items-center rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-2">
+              <span className="mr-2 text-orange-400">⏰</span>
+              <span className="text-sm font-medium text-orange-300">
+                Limited beta spots - 2,847 users applied this month
+              </span>
+            </div>
+          )}
         </div>
 
         {!isSubmitted ? (
@@ -87,9 +116,9 @@ const Banner = () => {
               <button
                 type="submit"
                 disabled={isLoading || !email}
-                className={`rounded-md bg-primary-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-400 disabled:cursor-not-allowed disabled:opacity-50`}
+                className={`rounded-md bg-gradient-to-r from-primary-500 to-primary-600 px-8 py-3 font-bold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:from-primary-600 hover:to-primary-700 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary-400 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:scale-100`}
               >
-                {isLoading ? 'Submitting...' : 'Join WishList'}
+                {isLoading ? 'Getting Access...' : 'Get Early Access'}
               </button>
             </div>
             {error && (

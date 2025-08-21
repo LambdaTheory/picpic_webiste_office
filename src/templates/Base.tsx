@@ -1,5 +1,7 @@
 import { SmoothCursor } from '@/components/ui/smooth-cursor';
 
+import FAQ from '../components/FAQ';
+import Reviews from '../components/Reviews';
 import { Meta } from '../layout/Meta';
 import { AppConfig } from '../utils/AppConfig';
 import { Banner } from './Banner';
@@ -14,6 +16,12 @@ const Base = () => (
     {/* Divider between Hero and VerticalFeatures */}
     <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-600 to-transparent opacity-50"></div>
     <VerticalFeatures />
+    {/* Divider between VerticalFeatures and FAQ */}
+    <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-600 to-transparent opacity-50"></div>
+    <FAQ />
+    {/* Divider between FAQ and Reviews */}
+    <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-600 to-transparent opacity-50"></div>
+    <Reviews />
     <Banner />
     <Footer />
     <SmoothCursor />

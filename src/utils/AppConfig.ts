@@ -1,12 +1,12 @@
 export const AppConfig = {
   site_name: 'PicPic',
   title:
-    'PicPic - AI Image Analysis & Metadata Extraction Tool | Stable Diffusion & ComfyUI Support',
+    'PicPic - Free AI Image Analysis Tool | Extract Metadata from Stable Diffusion & ComfyUI Images',
   description:
-    'Professional AI-powered image analysis tool for extracting metadata from AI-generated images. Support Stable Diffusion, ComfyUI with features like auto-tagging, prompt translation, reverse engineering, and one-click export. Perfect for AI artists, researchers, and content creators.',
+    '🚀 Free AI-powered tool trusted by 10,000+ creators! Extract metadata, reverse-engineer prompts, and analyze AI images from Stable Diffusion & ComfyUI. Get instant results with auto-tagging, prompt translation & one-click export. Start analyzing now!',
   locale: 'en',
   keywords:
-    'AI image analysis, metadata extraction, Stable Diffusion, ComfyUI, AI image tagging, prompt translation, reverse engineering, AI art tools, image metadata, PNG analysis, AI generated images, prompt extraction, image organization, AI content analysis',
+    'free AI image analysis, metadata extraction tool, Stable Diffusion metadata, ComfyUI analysis, AI image reverse engineering, prompt extraction, AI art tools, image metadata viewer, PNG info extractor, AI generated images analyzer, prompt translation, image organization, AI content analysis, free AI tools, stable diffusion prompt extractor',
   author: 'PicPic Team',
   canonical_url: 'https://picpic.ai',
   og_image: '/assets/images/og-image.png', // 需要创建1200x630的PNG图像
