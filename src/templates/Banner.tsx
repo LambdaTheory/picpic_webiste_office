@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { ShineBorder } from '../components/magicui/shine-border';
+import { useSubscriberCount } from '../hooks/useSubscriberCount';
 import { Section } from '../layout/Section';
 
 const Banner = () => {
@@ -8,6 +9,7 @@ const Banner = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const { count, incrementCount } = useSubscriberCount();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,6 +31,8 @@ const Banner = () => {
 
       if (data.success) {
         setIsSubmitted(true);
+        // 立即更新本地计数
+        incrementCount();
       } else {
         setError(data.message || 'Subscription failed. Please try again.');
       }
@@ -92,7 +96,8 @@ const Banner = () => {
             <div className="mt-4 inline-flex items-center rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-2">
               <span className="mr-2 text-orange-400">⏰</span>
               <span className="text-sm font-medium text-orange-300">
-                Limited beta spots - 2,847 users applied this month
+                Limited beta spots - {count.toLocaleString()} users applied this
+                month
               </span>
             </div>
           )}

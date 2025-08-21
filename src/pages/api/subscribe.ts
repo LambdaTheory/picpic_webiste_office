@@ -56,6 +56,16 @@ export default async function handler(
       throw new Error(`Google Sheets API error: ${response.status}`);
     }
 
+    // 增加订阅计数
+    try {
+      await fetch(`${req.headers.origin}/api/subscriber-count`, {
+        method: 'POST',
+      });
+    } catch (countError) {
+      // eslint-disable-next-line no-console
+      console.error('Failed to update subscriber count:', countError);
+    }
+
     return res.status(200).json({
       success: true,
       message: 'Successfully subscribed to wishlist',
