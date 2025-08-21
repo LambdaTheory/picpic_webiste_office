@@ -20,6 +20,16 @@ const Meta = (props: IMetaProps) => {
     props.canonical || `${AppConfig.canonical_url}${router.asPath}`;
   const ogImageUrl = props.ogImage || AppConfig.og_image;
 
+  // 动态获取当前域名和协议
+  const getBaseUrl = () => {
+    if (typeof window !== 'undefined') {
+      return `${window.location.protocol}//${window.location.host}`;
+    }
+    return AppConfig.canonical_url; // 服务端渲染时的fallback
+  };
+
+  const baseUrl = getBaseUrl();
+
   // 计算真实的平均评分
   const averageRating =
     reviewData.reduce((sum, review) => sum + review.rating, 0) /
@@ -93,7 +103,7 @@ const Meta = (props: IMetaProps) => {
         />
         <meta
           name="twitter:image"
-          content={`${AppConfig.canonical_url}${ogImageUrl}`}
+          content={`${baseUrl}${ogImageUrl}`}
           key="twitter:image"
         />
 
@@ -140,8 +150,8 @@ const Meta = (props: IMetaProps) => {
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'PicPic',
-              url: AppConfig.canonical_url,
-              logo: `${AppConfig.canonical_url}/assets/images/logo.png`,
+              url: baseUrl,
+              logo: `${baseUrl}/assets/images/logo.png`,
               description: AppConfig.description,
               foundingDate: '2024',
               sameAs: [
@@ -161,13 +171,13 @@ const Meta = (props: IMetaProps) => {
               '@context': 'https://schema.org',
               '@type': 'WebSite',
               name: AppConfig.site_name,
-              url: AppConfig.canonical_url,
+              url: baseUrl,
               description: AppConfig.description,
               potentialAction: {
                 '@type': 'SearchAction',
                 target: {
                   '@type': 'EntryPoint',
-                  urlTemplate: `${AppConfig.canonical_url}?q={search_term_string}`,
+                  urlTemplate: `${baseUrl}?q={search_term_string}`,
                 },
                 'query-input': 'required name=search_term_string',
               },
@@ -274,7 +284,7 @@ const Meta = (props: IMetaProps) => {
           site_name: AppConfig.site_name,
           images: [
             {
-              url: `${AppConfig.canonical_url}${ogImageUrl}`,
+              url: `${baseUrl}${ogImageUrl}`,
               width: 1200,
               height: 630,
               alt: props.title,

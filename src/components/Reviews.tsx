@@ -18,7 +18,7 @@ const reviewData: ReviewItem[] = [
     rating: 4.8,
     reviewBody:
       "As a beta tester, PicPic really solves my pain points! The AI image metadata extraction is very accurate and the interface is intuitive. However, I hope batch processing functionality can be added to make handling large volumes of images more efficient. Overall, it's a fantastic tool!",
-    datePublished: '2024-01-15',
+    datePublished: '2025-07-25',
     avatar:
       'https://api.dicebear.com/7.x/personas/svg?seed=sarah&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf',
     title: 'Very Practical AI Analysis Tool',
@@ -29,7 +29,7 @@ const reviewData: ReviewItem[] = [
     rating: 4.2,
     reviewBody:
       'The AI prompt reverse engineering feature is truly powerful! It helped me understand the creative process behind many excellent artworks. I suggest adding support for more AI models, like Midjourney image analysis. Also, it would be great if the export format could support JSON.',
-    datePublished: '2024-01-20',
+    datePublished: '2025-07-28',
     avatar:
       'https://api.dicebear.com/7.x/personas/svg?seed=michael&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf',
     title: 'Powerful Features, Expecting More Support',
@@ -40,7 +40,7 @@ const reviewData: ReviewItem[] = [
     rating: 4.9,
     reviewBody:
       'Great experience during the beta period! ComfyUI workflow analysis is particularly useful, helping me learn many complex node combinations. I hope workflow visualization features can be added in the future for more intuitive understanding.',
-    datePublished: '2024-01-25',
+    datePublished: '2025-08-02',
     avatar:
       'https://api.dicebear.com/7.x/personas/svg?seed=alex&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf',
     title: 'Excellent ComfyUI Analysis',
@@ -51,7 +51,7 @@ const reviewData: ReviewItem[] = [
     rating: 4.1,
     reviewBody:
       'As an AI researcher, this tool is very helpful for my research. The metadata extraction is comprehensive and multilingual support is good. However, it occasionally errors when processing some special format images, hoping for compatibility optimization.',
-    datePublished: '2024-02-01',
+    datePublished: '2025-08-05',
     avatar:
       'https://api.dicebear.com/7.x/personas/svg?seed=sarahkim&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf',
     title: 'Research Tool, Expecting Optimization',
@@ -62,7 +62,7 @@ const reviewData: ReviewItem[] = [
     rating: 4.7,
     reviewBody:
       "The fact that it's completely free is amazing! As a designer, I often need to analyze reference image parameters. I suggest adding parameter comparison functionality to better understand how different parameters affect image results.",
-    datePublished: '2024-02-05',
+    datePublished: '2025-08-08',
     avatar:
       'https://api.dicebear.com/7.x/personas/svg?seed=emma&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf',
     title: "Designer's Great Helper",
@@ -73,7 +73,7 @@ const reviewData: ReviewItem[] = [
     rating: 4.3,
     reviewBody:
       'Overall experience is good, the auto-tagging feature is very practical. However, I hope custom tagging functionality can be added to organize images according to personal needs. Also, cloud sync support would be perfect.',
-    datePublished: '2024-02-10',
+    datePublished: '2025-08-12',
     avatar:
       'https://api.dicebear.com/7.x/personas/svg?seed=david&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf',
     title: 'Expecting More Personalized Features',
