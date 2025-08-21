@@ -1,9 +1,11 @@
 // import { Button } from '../button/Button';
+import { NumberTicker } from '@/components/magicui/number-ticker';
+import { useSubscriberCount } from '@/hooks/useSubscriberCount';
+
 import RotatingText from '../components/RotatingText';
 import { Cover } from '../components/ui/cover';
 import { WavyBackground } from '../components/ui/wavy-background';
 import { HeroOneButton } from '../hero/HeroOneButton';
-import { useSubscriberCount } from '../hooks/useSubscriberCount';
 import { Section } from '../layout/Section';
 import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
@@ -90,8 +92,9 @@ const Hero = () => {
                 <div className="mt-4 inline-flex items-center rounded-full border border-primary-400/20 bg-primary-400/10 px-4 py-2">
                   <span className="mr-2 text-primary-400">⏰</span>
                   <span className="text-sm font-medium text-primary-300">
-                    Limited beta spots - {count.toLocaleString()}+ users already
-                    applied
+                    Limited beta spots -{' '}
+                    <NumberTicker value={count} className="text-primary-300" />{' '}
+                    users already applied
                   </span>
                 </div>
               </div>
