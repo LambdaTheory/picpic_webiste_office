@@ -8,7 +8,7 @@ export const AppConfig = {
   keywords:
     'free AI image analysis, metadata extraction tool, Stable Diffusion metadata, ComfyUI analysis, AI image reverse engineering, prompt extraction, AI art tools, image metadata viewer, PNG info extractor, AI generated images analyzer, prompt translation, image organization, AI content analysis, free AI tools, stable diffusion prompt extractor',
   author: 'PicPic Team',
-  canonical_url: 'https://picpic.ai',
+  canonical_url: 'https://www.nexwallpaper.com',
   og_image: '/assets/images/og-image.png', // 需要创建1200x630的PNG图像
   twitter_card: 'summary_large_image',
   twitter_site: '@PicPicAI',

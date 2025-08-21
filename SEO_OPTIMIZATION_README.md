@@ -37,7 +37,7 @@
   - 品牌色彩：#0f172a (背景) + #38bdf8, #818cf8, #c084fc (渐变)
 
 ### 2. 更新网站URL
-如果实际域名不是 `picpic.ai`，请更新以下文件：
+如果实际域名不是 `www.nexwallpaper.com`，请更新以下文件：
 - `src/utils/AppConfig.ts` 中的 `canonical_url`
 - `public/robots.txt` 中的 Sitemap URL
 - `public/sitemap.xml` 中的所有URL

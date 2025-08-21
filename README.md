@@ -90,7 +90,7 @@
 
 ### 🌐 Live Demo
 
-访问 [PicPic.ai](https://picpic.ai) 体验完整功能
+访问 [NexWallpaper](https://www.nexwallpaper.com) 体验完整功能
 
 ### 📸 Screenshots
 
@@ -383,9 +383,9 @@ Pro tips: if you need a project wide type checking with TypeScript, you can run 
 PicPic 是一款专业的AI图像分析工具，致力于为AI艺术家、研究人员和内容创作者提供最优质的图像元数据提取服务。
 
 **联系我们:**
-- 🌐 官网: [PicPic.ai](https://picpic.ai)
+- 🌐 官网: [NexWallpaper](https://www.nexwallpaper.com)
 - 🐦 Twitter: [@PicPicAI](https://twitter.com/PicPicAI)
-- 📧 邮箱: contact@picpic.ai
+- 📧 邮箱: contact@nexwallpaper.com
 
 **支持项目:**
 

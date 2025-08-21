@@ -6,7 +6,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://picpic.ai/</loc>
+    <loc>https://www.nexwallpaper.com/</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
   
   <!-- Compare Demo Page -->
   <url>
-    <loc>https://picpic.ai/compare-demo</loc>
+    <loc>https://www.nexwallpaper.com/compare-demo</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -23,7 +23,7 @@
   <!-- Add more pages as they are created -->
   <!-- Example:
   <url>
-    <loc>https://picpic.ai/features</loc>
+    <loc>https://www.nexwallpaper.com/features</loc>
     <lastmod>2024-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -104,7 +104,7 @@ const FAQ: React.FC = () => {
         <p className="text-gray-400">
           Have more questions?{' '}
           <a
-            href="mailto:support@picpic.ai"
+            href="mailto:support@nexwallpaper.com"
             className="text-primary-400 transition-colors hover:text-primary-300"
           >
             Contact our support team
