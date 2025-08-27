@@ -17,7 +17,8 @@ type IMetaProps = {
 const Meta = (props: IMetaProps) => {
   const router = useRouter();
   const currentUrl =
-    props.canonical || `${AppConfig.canonical_url}${router.asPath}`;
+    props.canonical ||
+    `${AppConfig.canonical_url.replace(/\/$/, '')}${router.asPath}`;
   const ogImageUrl = props.ogImage || AppConfig.og_image;
 
   // 动态获取当前域名和协议
@@ -204,7 +205,7 @@ const Meta = (props: IMetaProps) => {
                   '@type': 'ListItem',
                   position: 2,
                   name: 'AI Image Analysis Tool',
-                  item: `${AppConfig.canonical_url}#features`,
+                  item: `${AppConfig.canonical_url.replace(/\/$/, '')}/#features`,
                 },
               ],
             }),

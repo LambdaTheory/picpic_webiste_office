@@ -1,0 +1,9 @@
+{
+  "version": "1.0.1",
+  "lastUpdated": "2024-12-19",
+  "changes": [
+    "修复SEO canonical URL不一致问题",
+    "解决Google Search Console重复内容报错",
+    "统一URL格式，确保所有链接都以斜杠结尾"
+  ]
+}
